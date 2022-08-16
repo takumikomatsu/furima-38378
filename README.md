@@ -1,13 +1,15 @@
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| birthday           | date   | null: false |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| birthday           | date   | null: false               |
 
 has_many :items
 has_many :comments
@@ -49,16 +51,16 @@ belongs_to :items
 | item   | references | null: false, foreign_key: true |
 | user   | references | null: false, foreign_key: true |
 
-has_one :shipping_address_information
+has_one :shipping_address
 belongs_to :user
 belongs_to :item
 
-## shipping_address_information テーブル
+## shipping_addresses テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | postal_code  | string     | null: false                    |
-| region_id    | string     | null: false                    |
+| region_id    | integer    | null: false                    |
 | city         | string     | null: false                    |
 | address      | string     | null: false                    |
 | building     | string     |                                |
