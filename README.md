@@ -41,8 +41,8 @@ belongs_to :user
 | user   | references | null: false |
 | item   | references | null: false |
 
-belongs_to :users
-belongs_to :items
+belongs_to :user
+belongs_to :item
 
 ## purchasers テーブル
 
