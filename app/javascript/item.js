@@ -7,8 +7,8 @@ function calculation(){
   itemPrice.addEventListener('change', function(){
     const commission = itemPrice.value/10|0
     salesProfit = itemPrice.value-commission
-    addTaxPrice.innerHTML = `${commission}`
-    profit.innerHTML = `${salesProfit}`
+    addTaxPrice.innerHTML = commission
+    profit.innerHTML = salesProfit
   })
 }
 window.addEventListener('load', calculation)

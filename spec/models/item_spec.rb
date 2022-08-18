@@ -47,10 +47,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
-      it 'priceに全角数値が含まれていると登録できない' do
-        @item.price = '12345６'
+      it 'priceは整数のみでしか登録できない' do
+        @item.price = '123456.7'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is not a number')
+        expect(@item.errors.full_messages).to include('Price must be an integer')
       end
       it 'descriptionが空だと登録できない' do
         @item.description = ''
