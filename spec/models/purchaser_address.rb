@@ -63,5 +63,20 @@ RSpec.describe PurchaserAddress, type: :model do
       @purchaser_address.valid?
       expect(@purchaser_address.errors.full_messages).to include('Phone number is invalid')
     end
+    it 'tokenが空だと登録できない' do
+      @purchaser_address.token = ''
+      @purchaser_address.valid?
+      expect(@purchaser_address.errors.full_messages).to include("Token can't be blank")
+    end
+    it 'userが紐づいていないと登録できない' do
+      @purchaser_address.user_id = nil
+      @purchaser_address.valid?
+      expect(@purchaser_address.errors.full_messages).to include("User can't be blank")
+    end
+    it 'itemが紐付いていないと登録できない' do
+      @purchaser_address.item_id = nil
+      @purchaser_address.valid?
+      expect(@purchaser_address.errors.full_messages).to include("Item can't be blank")
+    end
   end
 end
