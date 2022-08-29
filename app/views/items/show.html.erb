@@ -28,7 +28,7 @@
     <p class="or-text">or</p>
     <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
    <% end %>
-   <% if current_user.id != @item.user_id && user_signed_in? && @item.purchaser.nil? %>
+   <% if user_signed_in? && current_user.id != @item.user_id && @item.purchaser.nil? %>
     <%= link_to "購入画面に進む", item_purchasers_path(@item.id) ,class:"item-red-btn"%>
    <% end %>  
 

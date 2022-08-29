@@ -4,7 +4,7 @@ function calculation(){
   const addTaxPrice = document.getElementById("add-tax-price")
   const profit = document.getElementById("profit")
 
-  itemPrice.addEventListener('change', function(){
+  itemPrice.addEventListener('input', function(){
     const commission = (Math.floor(itemPrice.value * 0.1))
     addTaxPrice.innerHTML = commission
     salesProfit = (Math.floor(itemPrice.value-commission))
