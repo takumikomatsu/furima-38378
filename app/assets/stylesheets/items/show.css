@@ -166,6 +166,7 @@
 .comment-btn {
   line-height: 48px;
   background-color: #3CCACE;
+  background-image: image-url('comment.png');
   border: 1px solid #3CCACE;
   color: #fff;
   width: 50%;
@@ -175,13 +176,31 @@
   margin-bottom: 2vh;
 }
 
-.comment-flag {
+/* .comment-flag {
   display: flex;
   justify-content: center;
-}
+} */
 
 .comment-flag-icon {
   margin: 10px 5px 0 0;
+}
+
+.comments {
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.comments h1{
+  font-weight: bolder;
+  color: darkslategrey;
+  margin-bottom: 10px;
+}
+
+.comments a{
+  color:blue;
+  font-weight: 100;
+  cursor: default;
 }
 
 .links {
